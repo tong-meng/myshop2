@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 export default {
   data () {
     return {
@@ -54,11 +54,11 @@ export default {
         // 校验成功
         console.log('发送登录ajax请求')
         console.log(this.form)
-        axios.post('http://localhost:8888/api/private/v1/login', this.form).then(
+        this.$axios.post('login', this.form).then(
           res => {
             // console.log(res)
             // console.log(res.data)
-            const { meta, data } = res.data
+            const { meta, data } = res
             if (meta.status === 200) {
               // 登录成功，跳转页面
               console.log(meta.msg)
@@ -82,7 +82,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .login {
   width: 100%;
   height: 100%;
