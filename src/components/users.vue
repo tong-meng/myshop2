@@ -2,7 +2,7 @@
   <div class="users">
     <!-- 面包屑 -->
     <el-breadcrumb separator-class="el-icon-arrow-right">
-      <el-breadcrumb-item>首页</el-breadcrumb-item>
+      <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
       <el-breadcrumb-item>用户管理</el-breadcrumb-item>
       <el-breadcrumb-item>用户列表</el-breadcrumb-item>
     </el-breadcrumb>
@@ -25,8 +25,8 @@
       <el-table-column prop label="操作">
         <template v-slot:default="{row}">
           <el-button @click="showEditDialog(row)" plain size="small" icon="el-icon-edit" type="primary"></el-button>
-          <el-button @click="delUser(obj.row.id)" plain size="small" icon="el-icon-delete" type="danger"></el-button>
-          <el-button plain size="small" icon="el-icon-check" type="success"></el-button>
+          <el-button @click="delUser(row.id)" plain size="small" icon="el-icon-delete" type="danger"></el-button>
+          <el-button plain size="small" icon="el-icon-check" type="success">分配角色</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -262,7 +262,7 @@ export default {
       this.$refs.form.resetFields()
     },
     showEditDialog (row) {
-      console.log(row)
+      // console.log(row)
       this.editVisible = true
       this.editForm.username = row.username
       this.editForm.email = row.email

@@ -7,6 +7,11 @@
 <script>
 export default {
 
+  methdos: {
+    getRightLst () {
+
+    }
+  }
 }
 </script>
 

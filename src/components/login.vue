@@ -3,7 +3,7 @@
     <el-form :rules="rules" ref="form" :model="form" status-icon label-width="80px">
       <img src="../assets/panda.png" alt="">
       <el-form-item label="用户名" prop="username">
-        <el-input placeholder="请输入用户名" v-model="form.username"></el-input>
+        <el-input @keyup.enter.native="login" placeholder="请输入用户名" v-model="form.username"></el-input>
       </el-form-item>
       <el-form-item label="密码" prop="password">
         <el-input placeholder="请输入密码" type="password" v-model="form.password"></el-input>
